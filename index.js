@@ -25,10 +25,11 @@ function displayResults(responseJson, per_page)
   $('#results-list').removeClass('hidden');
 };
 
-function getRepos(accept, username, per_page) {
+function getRepos(username, type, per_page) {
   const params = {
-    accept = "application/vnd.github.v3+json",
+    // accept = "application/vnd.github.v3+json",
     username = "#js-search-term",
+    type = "all", 
     per_page = 10
   };
   const queryString = formatQueryParams(params)
