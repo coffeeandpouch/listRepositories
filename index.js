@@ -22,7 +22,7 @@ function displayResults(responseJson, per_page)
         </li>`
         )};
   //display the results section
-  $('#reults-list').removeClass('hidden');
+  $('#results-list').removeClass('hidden');
 };
 
 function getRepositories(accept, username, per_page) {
@@ -37,7 +37,12 @@ function getRepositories(accept, username, per_page) {
   console.log(url);
 }
 
-fetch(query, params) {
+const options = {
+  headers = new headers ({
+    accept:"application/vnd.github.v3+json"})
+};
+
+fetch(url, options)  
   .then(response => {
     if (response.ok) {
       return response.json();
@@ -45,17 +50,17 @@ fetch(query, params) {
     throw new Error(response.statusText);
   })
   .then(responseJson => displayResults
-    (response.Json, per_page))
+    (responseJson, per_page))
   .catch(err => {
     $('#js-error-message').text(`Something went wrong: ${err.message}`);
   });
-}
+// }
 
 function watchForm() {
   $('form').submit(event => {
     eventPreventDefault();
-    var username = $('js-search-term').val();
-    const per_page = $('js-max-results').val();
+    var username = $('#js-search-term').val();
+    const per_page = $('#js-max-results').val();
     getRepositiories(username, per_page);
   });
 }
