@@ -25,7 +25,7 @@ function displayResults(responseJson, per_page)
   $('#results-list').removeClass('hidden');
 };
 
-function getRepositories(accept, username, per_page) {
+function getRepos(accept, username, per_page) {
   const params = {
     accept = "application/vnd.github.v3+json",
     username = "#js-search-term",
