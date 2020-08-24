@@ -1,6 +1,6 @@
 "use strict";
 
-const searchUrl = "hhtps://www.github.com/users/{username}/repos";
+const searchUrl = `'hhtps://www.github.com/users/${username}/repos'`;
 
 
 function formatQueryParams(params) {
@@ -64,5 +64,10 @@ function watchForm() {
     getRepositiories(username, per_page);
   });
 }
+
+$(function () {
+  console.log("App loaded! Waiting for submit!");
+  watchForm();
+});
 
 $(getRepos);
