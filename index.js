@@ -28,7 +28,7 @@ function displayResults(responseJson, per_page)
 function getRepositories(accept, username, per_page) {
   const params = {
     accept = "application/vnd.github.v3+json",
-    username = "js-search-term",
+    username = "#js-search-term",
     per_page = 10
   };
   const queryString = formatQueryParams(params)
