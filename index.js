@@ -57,7 +57,7 @@ function getRepos(username,type, per_page) {
 
 function watchForm() {
   $("form").submit((event) => {
-    eventPreventDefault();
+    event.preventDefault();
     var username = $("#js-search-term").val();
     const per_page = $("#js-max-results").val();
     getRepos(username, "all", per_page);
