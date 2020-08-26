@@ -24,7 +24,7 @@ function displayResults(responseJson, per_page) {
 
 function getRepos(username,type, per_page) {
   // username = $("#js-search-term").val()
-  const searchUrl = `https://www.github.com/users/${username}/repos`;
+  const searchUrl = `https://api.github.com/users/${username}/repos`;
   const params = {
     // accept = "application/vnd.github.v3+json",
 
@@ -32,7 +32,7 @@ function getRepos(username,type, per_page) {
     per_page: 10,
   };
   const queryString = formatQueryParams(params);
-  const url = searchUrl + "?" + queryString;
+  const url = searchUrl + queryString;
 
   console.log(url);
 
