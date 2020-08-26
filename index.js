@@ -32,7 +32,7 @@ function getRepos(username,type, per_page) {
     per_page: 10,
   };
   const queryString = formatQueryParams(params);
-  const url = searchUrl + queryString;
+  const url = searchUrl + "?" + queryString;
 
   console.log(url);
 
