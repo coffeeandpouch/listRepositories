@@ -12,7 +12,7 @@ function displayResults(responseJson, per_page) {
   console.log(responseJson);
   $("#results-list").empty();
   //iterate through the repositories array stopping at the max number of results
-  for (let i = 0; (i < responseJson.value.length) & (i < per_page); i++) {
+  for (let i = 0; (i < responseJson.value) & (i < per_page); i++) {
     $("#results-list").append(
       `<li><h3><a href="$(responseJson.value[i].url}">$(responseJson.value[i].title}</a></h3>
         </li>`
