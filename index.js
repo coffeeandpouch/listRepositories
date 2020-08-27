@@ -14,7 +14,7 @@ function displayResults(responseJson, per_page) {
   //iterate through the repositories array stopping at the max number of results
   for (let i = 0; (i < responseJson.value) & (i < per_page); i++) {
     $("#results-list").append(
-      `<li><h3><a href="$(responseJson.value[i].url}">$(responseJson.value[i].title}</a></h3>
+      `<li><h3><a href="$(responseJson.value.length[i].url}">$(responseJson.value[i].name}</a></h3>
         </li>`
     );
   }
