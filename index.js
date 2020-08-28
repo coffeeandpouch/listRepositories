@@ -7,19 +7,20 @@ function formatQueryParams(params) {
   return queryItems.join("&");
 }
 
+
 function displayResults(responseJson, per_page) {
   //if there are previous results, remove them
   console.log(responseJson);
-  $("#results-list").empty();
+  $(".results").empty();
   //iterate through the repositories array stopping at the max number of results
   for (let i = 0; (i < responseJson.value) & (i < per_page); i++) {
-    $("#results-list").append(
+    $(".results").append(
       `<li><h3><a href="$(responseJson.value.length[i].url}">$(responseJson.value[i].name}</a></h3>
         </li>`
     );
   }
   //display the results section
-  $("#results-list").removeClass("hidden");
+  $(".results").removeClass("hidden");
 }
 
 function getRepos(username,type, per_page) {
